@@ -1,11 +1,10 @@
-// menu.js - controle do menu hambúrguer
 document.addEventListener('DOMContentLoaded', () => {
-  const btnMenu = document.querySelector('.menu-btn');
-  const navMenu = document.querySelector('nav ul');
+  const menuBtn = document.querySelector('.menu-btn');
+  const menu = document.querySelector('nav ul.menu');
 
-  if (btnMenu && navMenu) {
-    btnMenu.addEventListener('click', () => {
-      navMenu.classList.toggle('mostrar');
+  if (menuBtn && menu) {
+    menuBtn.addEventListener('click', () => {
+      menu.classList.toggle('mostrar');
     });
   }
 });
