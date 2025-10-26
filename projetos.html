@@ -10,15 +10,19 @@
 <body>
   <header>
     <h1>Projetos Sociais</h1>
-    <button class="menu-btn" aria-label="Abrir menu de navegação">☰</button>
+    <button class="menu-btn">☰</button>
     <nav>
-      <!-- ✅ Adicionado class="menu" para compatibilidade com o CSS -->
       <ul class="menu">
         <li><a href="index.html">Início</a></li>
-        <li><a href="projetos.html" aria-current="page">Projetos</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
         <li><a href="cadastro.html">Cadastro</a></li>
       </ul>
     </nav>
+    <!-- ✅ Mantidos os botões de acessibilidade -->
+    <div class="acessibilidade">
+      <button id="modoEscuroBtn">Modo Escuro</button>
+      <button id="altoContrasteBtn">Alto Contraste</button>
+    </div>
   </header>
 
   <main>
@@ -50,5 +54,6 @@
   <!-- Scripts externos -->
   <script src="js/menu.js"></script>
   <script src="js/renderProjetos.js"></script>
+  <script src="js/acessibilidade.js"></script>
 </body>
 </html>
