@@ -1,0 +1,321 @@
+
+/* ======= Reset e estilo base ======= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f7f9fb;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ======= Cabeçalho ======= */
+header {
+  background-color: #005f73;
+  color: #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+/* Menu */
+.menu-btn {
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+nav ul.menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+nav ul.menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul.menu li a:hover,
+nav ul.menu li a:focus {
+  color: #ffd166;
+  outline: 2px solid #ffd166;
+  outline-offset: 2px;
+}
+
+/* Menu responsivo */
+@media (max-width: 768px) {
+  nav ul.menu {
+    flex-direction: column;
+    display: none;
+    width: 200px;
+    background-color: #005f73;
+    padding: 1rem;
+    position: absolute;
+    top: 60px;
+  }
+
+  nav ul.menu.mostrar {
+    display: flex;
+  }
+}
+
+/* ======= Main e seções ======= */
+main {
+  flex: 1;
+  max-width: 900px;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section {
+  margin-bottom: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+h2 {
+  color: #005f73;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #0a9396;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+/* ======= Imagens ======= */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 10px;
+}
+
+/* Ajuste específico da imagem inicial */
+#inicio img, .fachada {
+  max-width: 700px;
+  width: 100%;
+  height: auto;
+}
+
+/* ======= Cards de Projetos ======= */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.card {
+  background-color: #e0f2f1;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+}
+
+/* ======= Botões ======= */
+a.btn,
+button {
+  display: inline-block;
+  background-color: #0a9396;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+a.btn:hover,
+button:hover,
+a.btn:focus,
+button:focus {
+  background-color: #005f73;
+  outline: 2px solid #ffd166;
+  outline-offset: 2px;
+}
+
+/* ======= Formulário ======= */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #f1f1f1;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+legend {
+  font-weight: bold;
+  color: #005f73;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+label {
+  font-weight: 600;
+  text-align: left;
+}
+
+input {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input:focus {
+  outline: 2px solid #0a9396;
+}
+
+button[type="submit"] {
+  padding: 0.8rem;
+  width: 100%;
+  background-color: #0a9396;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button[type="submit"]:hover {
+  background-color: #005f73;
+}
+
+/* ======= Rodapé ======= */
+footer {
+  background-color: #005f73;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 2rem;
+  font-size: 0.9rem;
+  width: 100%;
+  max-width: 900px;
+  margin-top: auto;
+  border-radius: 0 0 10px 10px;
+}
+
+/* ======= Modo Escuro ======= */
+body.modo-escuro {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.modo-escuro header,
+body.modo-escuro footer {
+  background-color: #1b1b1b;
+  color: #fff;
+}
+
+body.modo-escuro a,
+body.modo-escuro button {
+  background-color: #0a9396;
+  color: #fff;
+}
+
+/* ======= Alto Contraste ======= */
+body.alto-contraste {
+  background-color: #000;
+  color: #fff;
+}
+
+body.alto-contraste header,
+body.alto-contraste footer {
+  background-color: #000;
+  color: #fff;
+}
+
+body.alto-contraste main,
+body.alto-contraste section,
+body.alto-contraste form,
+body.alto-contraste fieldset {
+  background-color: #000;
+  color: #fff;
+  border-color: #fff;
+}
+
+body.alto-contraste a,
+body.alto-contraste button,
+body.alto-contraste input {
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #fff;
+}
+
+body.alto-contraste h2 {
+  color: #ffd166;
+}
+
+/* ======= Responsividade ======= */
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+  .cards {
+    gap: 1rem;
+  }
+}
