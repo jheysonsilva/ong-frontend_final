@@ -1,5 +1,3 @@
-
-// validacaoForm.js - validação de formulário e armazenamento local
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('form');
   if (!form) return;
