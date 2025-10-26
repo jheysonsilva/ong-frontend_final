@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -11,11 +10,12 @@
 <body>
   <header>
     <h1>Projetos Sociais</h1>
-    <button class="menu-btn">☰</button>
+    <button class="menu-btn" aria-label="Abrir menu de navegação">☰</button>
     <nav>
-      <ul>
+      <!-- ✅ Adicionado class="menu" para compatibilidade com o CSS -->
+      <ul class="menu">
         <li><a href="index.html">Início</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="projetos.html" aria-current="page">Projetos</a></li>
         <li><a href="cadastro.html">Cadastro</a></li>
       </ul>
     </nav>
