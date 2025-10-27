@@ -10,7 +10,6 @@
 <body>
   <header>
     <h1>ONG Esperança Viva</h1>
-    <button class="menu-btn">☰</button>
     <nav>
       <ul class="menu">
         <li><a href="index.html">Início</a></li>
@@ -22,7 +21,7 @@
 
   <main>
     <section>
-      <h2>Preencha seus dados</h2>
+      <h2>Cadastro de Voluntário ou Doador</h2>
       <form>
         <fieldset>
           <legend>Informações Pessoais</legend>
@@ -44,33 +43,32 @@
 
           <label for="endereco">Endereço:</label>
           <input type="text" id="endereco" name="endereco" required>
-
-          <label for="cep">CEP:</label>
-          <input type="text" id="cep" name="cep" pattern="[0-9]{8}" title="Digite apenas números" required>
-
-          <label for="cidade">Cidade:</label>
-          <input type="text" id="cidade" name="cidade" required>
-
-          <label for="estado">Estado:</label>
-          <input type="text" id="estado" name="estado" maxlength="2" placeholder="Ex: PR" required>
-
-          <button type="submit">Enviar Cadastro</button>
         </fieldset>
+
+        <fieldset>
+          <legend>Tipo de Cadastro</legend>
+          <label>
+            <input type="radio" name="tipo" value="voluntario" required> Voluntário
+          </label>
+          <label>
+            <input type="radio" name="tipo" value="doador"> Doador
+          </label>
+        </fieldset>
+
+        <button type="submit">Enviar Cadastro</button>
       </form>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 ONG Esperança Viva - Obrigado por fazer parte!</p>
+    <p>&copy; 2025 ONG Esperança Viva - Todos os direitos reservados.</p>
   </footer>
 
-  <!-- Botões fixos de acessibilidade -->
   <div class="acessibilidade-fixa">
     <button id="modoEscuroBtn">Modo Escuro</button>
     <button id="altoContrasteBtn">Alto Contraste</button>
   </div>
 
-  <!-- Scripts -->
   <script src="js/menu.js"></script>
   <script src="js/validacaoForm.js"></script>
   <script src="js/acessibilidade.js"></script>
