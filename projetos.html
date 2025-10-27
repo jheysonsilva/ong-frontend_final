@@ -8,21 +8,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <h1>ONG Esperança Viva</h1>
-    <button class="menu-btn">☰</button>
-    <nav>
-      <ul class="menu">
-        <li><a href="index.html">Início</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="cadastro.html">Cadastro</a></li>
-      </ul>
-    </nav>
-    <div class="acessibilidade">
-      <button id="modoEscuroBtn">Modo Escuro</button>
-      <button id="altoContrasteBtn">Alto Contraste</button>
-    </div>
-  </header>
+  <div id="header-container"></div>
 
   <main>
     <section>
@@ -50,6 +36,14 @@
     <p>&copy; 2025 ONG Esperança Viva - Transparência e Solidariedade.</p>
   </footer>
 
+  <!-- Scripts -->
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+      });
+  </script>
   <script src="js/menu.js"></script>
   <script src="js/renderProjetos.js"></script>
   <script src="js/acessibilidade.js"></script>
