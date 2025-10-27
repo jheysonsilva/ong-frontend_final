@@ -1,4 +1,4 @@
-/* ===== Reset e base ===== */
+/* ======= Reset e estilo base ======= */
 * {
   margin: 0;
   padding: 0;
@@ -14,33 +14,42 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 70px; /* espaço para header fixo */
 }
 
-/* ===== Cabeçalho ===== */
+/* ======= Cabeçalho ======= */
 header {
   background-color: #005f73;
   color: #fff;
   width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 1rem 2rem;
+  justify-content: center;
+  padding: 1rem 0;
+  text-align: center;
 }
 
 header h1 {
   font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 /* Menu */
+.menu-btn {
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
 nav ul.menu {
   list-style: none;
   display: flex;
   gap: 1.5rem;
+  justify-content: center;
 }
 
 nav ul.menu li a {
@@ -57,35 +66,23 @@ nav ul.menu li a:focus {
 }
 
 /* Menu responsivo */
-.menu-btn {
-  font-size: 1.8rem;
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  display: none;
-}
-
-@media (max-width:768px){
-  .menu-btn {
-    display: block;
-  }
+@media (max-width: 768px) {
   nav ul.menu {
     flex-direction: column;
     display: none;
-    position: absolute;
-    top: 70px;
-    right: 0;
+    width: 200px;
     background-color: #005f73;
     padding: 1rem;
-    width: 200px;
+    position: absolute;
+    top: 60px;
   }
+
   nav ul.menu.mostrar {
     display: flex;
   }
 }
 
-/* ===== Main ===== */
+/* ======= Main e seções ======= */
 main {
   flex: 1;
   max-width: 900px;
@@ -95,11 +92,15 @@ main {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* ===== Seções ===== */
 section {
   margin-bottom: 2rem;
+  width: 100%;
+  text-align: center;
 }
 
 h2 {
@@ -110,7 +111,7 @@ h2 {
   display: inline-block;
 }
 
-/* ===== Imagens ===== */
+/* ======= Imagens ======= */
 img {
   max-width: 100%;
   height: auto;
@@ -119,10 +120,17 @@ img {
   border-radius: 10px;
 }
 
-/* ===== Cards ===== */
+/* Ajuste específico da imagem inicial */
+#inicio img, .fachada {
+  max-width: 700px;
+  width: 100%;
+  height: auto;
+}
+
+/* ======= Cards de Projetos ======= */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
   justify-items: center;
 }
@@ -132,9 +140,15 @@ img {
   border-radius: 10px;
   padding: 1rem;
   box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
   width: 100%;
   max-width: 300px;
   text-align: center;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-5px);
 }
 
 .card img {
@@ -145,8 +159,9 @@ img {
   margin-bottom: 0.8rem;
 }
 
-/* ===== Botões ===== */
-a.btn, button {
+/* ======= Botões ======= */
+a.btn,
+button {
   display: inline-block;
   background-color: #0a9396;
   color: #fff;
@@ -155,16 +170,19 @@ a.btn, button {
   border-radius: 5px;
   border: none;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background-color 0.3s ease;
 }
 
-a.btn:hover, button:hover, a.btn:focus, button:focus {
+a.btn:hover,
+button:hover,
+a.btn:focus,
+button:focus {
   background-color: #005f73;
   outline: 2px solid #ffd166;
   outline-offset: 2px;
 }
 
-/* ===== Formulário ===== */
+/* ======= Formulário ======= */
 form {
   display: flex;
   flex-direction: column;
@@ -172,8 +190,10 @@ form {
   background-color: #f1f1f1;
   padding: 1.5rem;
   border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   width: 100%;
   max-width: 500px;
+  margin: 0 auto;
 }
 
 fieldset {
@@ -183,6 +203,17 @@ fieldset {
   border: 1px solid #ccc;
   padding: 1rem;
   border-radius: 8px;
+}
+
+legend {
+  font-weight: bold;
+  color: #005f73;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
 }
 
 label {
@@ -197,65 +228,109 @@ input {
   border: 1px solid #ccc;
 }
 
-/* ===== Rodapé ===== */
+input:focus {
+  outline: 2px solid #0a9396;
+}
+
+button[type="submit"] {
+  padding: 0.8rem;
+  width: 100%;
+  background-color: #0a9396;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button[type="submit"]:hover {
+  background-color: #005f73;
+}
+
+/* ======= Rodapé ======= */
 footer {
   background-color: #005f73;
   color: #fff;
   text-align: center;
   padding: 1rem 2rem;
+  font-size: 0.9rem;
   width: 100%;
+  max-width: 900px;
+  margin-top: auto;
   border-radius: 0 0 10px 10px;
 }
 
-/* ===== Botões de acessibilidade fixos ===== */
+/* ======= Botões fixos de acessibilidade ======= */
 .acessibilidade-fixa {
   position: fixed;
   bottom: 20px;
   right: 20px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  z-index: 1001;
+  gap: 0.5rem;
+  z-index: 999;
 }
 
 .acessibilidade-fixa button {
   padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #0a9396;
+  color: #fff;
+  cursor: pointer;
   font-size: 0.9rem;
+  transition: background-color 0.3s ease;
 }
 
-/* ===== Modo escuro ===== */
+.acessibilidade-fixa button:hover,
+.acessibilidade-fixa button:focus {
+  background-color: #005f73;
+  outline: 2px solid #ffd166;
+  outline-offset: 2px;
+}
+
+/* ======= Modo Escuro ======= */
 body.modo-escuro {
   background-color: #121212;
   color: #e0e0e0;
 }
 
-body.modo-escuro header, body.modo-escuro footer {
+body.modo-escuro header,
+body.modo-escuro footer {
   background-color: #1b1b1b;
+  color: #fff;
 }
 
-body.modo-escuro a, body.modo-escuro button {
+body.modo-escuro a,
+body.modo-escuro button {
   background-color: #0a9396;
   color: #fff;
 }
 
-/* ===== Alto contraste ===== */
+/* ======= Alto Contraste ======= */
 body.alto-contraste {
   background-color: #000;
   color: #fff;
 }
 
-body.alto-contraste header, body.alto-contraste footer {
+body.alto-contraste header,
+body.alto-contraste footer {
   background-color: #000;
   color: #fff;
 }
 
-body.alto-contraste main, body.alto-contraste section, body.alto-contraste form, body.alto-contraste fieldset {
+body.alto-contraste main,
+body.alto-contraste section,
+body.alto-contraste form,
+body.alto-contraste fieldset {
   background-color: #000;
   color: #fff;
   border-color: #fff;
 }
 
-body.alto-contraste a, body.alto-contraste button, body.alto-contraste input {
+body.alto-contraste a,
+body.alto-contraste button,
+body.alto-contraste input {
   background-color: #fff;
   color: #000;
   border: 2px solid #fff;
@@ -265,8 +340,16 @@ body.alto-contraste h2 {
   color: #ffd166;
 }
 
-/* ===== Responsividade ===== */
-@media(max-width:768px){
-  main { padding:1rem; }
-  .cards { gap:1rem; }
+/* ======= Responsividade ======= */
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+  .cards {
+    gap: 1rem;
+  }
+  .acessibilidade-fixa {
+    bottom: 10px;
+    right: 10px;
+  }
 }
