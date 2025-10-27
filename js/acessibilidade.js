@@ -1,13 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const body = document.body;
-  const btnModoEscuro = document.getElementById('modoEscuroBtn');
-  const btnAltoContraste = document.getElementById('altoContrasteBtn');
+  const modoEscuroBtn = document.getElementById('modoEscuroBtn');
+  const altoContrasteBtn = document.getElementById('altoContrasteBtn');
 
-  btnModoEscuro?.addEventListener('click', () => {
-    body.classList.toggle('modo-escuro');
-  });
+  if(modoEscuroBtn) {
+    modoEscuroBtn.addEventListener('click', () => {
+      document.body.classList.toggle('modo-escuro');
+    });
+  }
 
-  btnAltoContraste?.addEventListener('click', () => {
-    body.classList.toggle('alto-contraste');
-  });
+  if(altoContrasteBtn) {
+    altoContrasteBtn.addEventListener('click', () => {
+      document.body.classList.toggle('alto-contraste');
+    });
+  }
 });
