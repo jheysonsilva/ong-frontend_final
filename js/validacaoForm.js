@@ -1,3 +1,4 @@
+// validacaoForm.js - validação de formulário e armazenamento local
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('form');
   if (!form) return;
@@ -28,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const usuario = { nome, email, cpf, telefone, cidade, criadoEm: new Date().toISOString() };
     localStorage.setItem('usuarioCadastro', JSON.stringify(usuario));
-
     alert('✅ Cadastro realizado com sucesso!');
     form.reset();
   });
