@@ -23,12 +23,25 @@ header {
   width: 100%;
   padding: 1.5rem 0;
   text-align: center;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header h1 {
   font-size: 2rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Botão menu para mobile */
+.menu-btn {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 0.5rem;
 }
 
 nav ul.menu {
@@ -53,18 +66,24 @@ nav ul.menu li a:focus {
   outline-offset: 2px;
 }
 
-/* ======= Botão menu para mobile ======= */
-.menu-btn {
-  display: none;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  z-index: 1000;
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  nav ul.menu {
+    display: none;
+    flex-direction: column;
+    width: 90%;
+    margin: 0.5rem auto 0;
+    background-color: #005f73;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  nav ul.menu.mostrar {
+    display: flex;
+  }
 }
 
 /* ======= Botões fixos de acessibilidade ======= */
@@ -319,27 +338,5 @@ body.alto-contraste h2 {
   }
   .cards {
     gap: 1rem;
-  }
-
-  nav ul.menu {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: #005f73;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    text-align: center;
-    padding: 1rem 0;
-    gap: 1rem;
-    border-radius: 0;
-  }
-
-  nav ul.menu.mostrar {
-    display: flex;
-  }
-
-  .menu-btn {
-    display: block;
   }
 }
