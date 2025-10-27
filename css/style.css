@@ -31,7 +31,6 @@ header h1 {
   margin-bottom: 0.8rem;
 }
 
-/* ======= Menu ======= */
 nav ul.menu {
   list-style: none;
   display: flex;
@@ -65,6 +64,36 @@ nav ul.menu li a:focus {
   position: absolute;
   right: 1rem;
   top: 1rem;
+  z-index: 1000;
+}
+
+/* ======= Botões fixos de acessibilidade ======= */
+.acessibilidade-fixa {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9999;
+}
+
+.acessibilidade-fixa button {
+  background-color: #0a9396;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.acessibilidade-fixa button:hover,
+.acessibilidade-fixa button:focus {
+  background-color: #005f73;
+  outline: 2px solid #ffd166;
+  outline-offset: 2px;
 }
 
 /* ======= Main e seções ======= */
@@ -288,7 +317,6 @@ body.alto-contraste h2 {
   main {
     padding: 1rem;
   }
-
   .cards {
     gap: 1rem;
   }
@@ -301,8 +329,10 @@ body.alto-contraste h2 {
     position: absolute;
     top: 100%;
     left: 0;
-    padding: 1rem 0;
     text-align: center;
+    padding: 1rem 0;
+    gap: 1rem;
+    border-radius: 0;
   }
 
   nav ul.menu.mostrar {
