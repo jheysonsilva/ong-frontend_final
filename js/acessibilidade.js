@@ -1,12 +1,14 @@
+// acessibilidade.js - Modo Escuro e Alto Contraste
 document.addEventListener('DOMContentLoaded', () => {
+  const body = document.body;
   const btnModoEscuro = document.getElementById('modoEscuroBtn');
   const btnAltoContraste = document.getElementById('altoContrasteBtn');
 
   btnModoEscuro?.addEventListener('click', () => {
-    document.body.classList.toggle('modo-escuro');
+    body.classList.toggle('modo-escuro');
   });
 
   btnAltoContraste?.addEventListener('click', () => {
-    document.body.classList.toggle('alto-contraste');
+    body.classList.toggle('alto-contraste');
   });
 });
