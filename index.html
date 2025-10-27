@@ -8,8 +8,18 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Container do cabeçalho -->
-  <div id="header-container"></div>
+  <!-- Cabeçalho unificado -->
+  <header>
+    <h1>ONG Esperança Viva</h1>
+    <button class="menu-btn">☰</button>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main>
     <section>
@@ -41,15 +51,13 @@
     <p>&copy; 2025 ONG Esperança Viva - Todos os direitos reservados.</p>
   </footer>
 
+  <!-- Botões de acessibilidade fixos -->
+  <div class="acessibilidade-fixa">
+    <button id="modoEscuroBtn">Modo Escuro</button>
+    <button id="altoContrasteBtn">Alto Contraste</button>
+  </div>
+
   <!-- Scripts -->
-  <script>
-    // Carrega o cabeçalho em todas as páginas
-    fetch('header.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('header-container').innerHTML = data;
-      });
-  </script>
   <script src="js/menu.js"></script>
   <script src="js/acessibilidade.js"></script>
 </body>
