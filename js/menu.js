@@ -1,10 +1,9 @@
+// menu.js - Menu responsivo
 document.addEventListener('DOMContentLoaded', () => {
-  const menuBtn = document.querySelector('.menu-btn');
+  const btn = document.querySelector('.menu-btn');
   const menu = document.querySelector('nav ul.menu');
 
-  if (menuBtn && menu) {
-    menuBtn.addEventListener('click', () => {
-      menu.classList.toggle('mostrar');
-    });
-  }
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('mostrar');
+  });
 });
