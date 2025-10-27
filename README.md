@@ -173,5 +173,3 @@ main → develop → feature/gitflow-final → release/v1.0.0 → tag v1.0.0
 Desenvolvedor Back-End & Front-End em formação
 📚 *Curso:* Análise e Desenvolvimento de Sistemas
 🏫 *Atividade IV — Desenvolvimento Front-End para Web (HTML, CSS e JS)*
-
-Quer que eu faça isso agora?
